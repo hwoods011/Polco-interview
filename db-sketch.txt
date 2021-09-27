@@ -1,0 +1,42 @@
+This is my initial "sketch" of what I want/thing the db should look like. 
+
+table song {
+  id int
+  name string(255)
+  artist int fk
+  album_id fk
+  }
+  
+  
+table album {
+  id
+  name
+  artist_id fk
+}
+
+table artist {
+  id int
+  name string
+  genre string
+}
+  
+  
+  
+table artistGenre {
+  id int pk
+  genreName string
+}
+
+
+table userFavorites {
+  userId
+  songId
+}
+
+table user {
+  id
+  username
+  firstName
+  lastName
+}
+
