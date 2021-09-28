@@ -30,7 +30,9 @@
 
 ## Without Docker
 1. If not using docker: Install Python and setup to be on system path.
-2. Inside cloned folder run 
+  - A good command to use to check if it's configured correctly
+> python -v
+3. Inside cloned folder run 
    > pip install -r requirements.txt  
 
 ## VSCode
