@@ -1,0 +1,29 @@
+{
+    "class": "User",
+    "data": [
+        {
+            "username": "hayden",
+            "firstname": "hayden",
+            "lastname": "woods"
+        },
+        {
+            "username": "billy",
+            "firstname": "billy",
+            "lastname": "bob"
+        }
+    ],
+
+    "class": "User",
+    "data": [
+        {
+            "username": "hayden",
+            "firstname": "hayden",
+            "lastname": "woods"
+        },
+        {
+            "username": "billy",
+            "firstname": "billy",
+            "lastname": "bob"
+        }
+    ]
+}

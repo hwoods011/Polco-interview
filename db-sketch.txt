@@ -17,7 +17,7 @@ table album {
 table artist {
   id int
   name string
-  genre string
+  genre_id FK
 }
   
   
