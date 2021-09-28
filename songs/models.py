@@ -1,8 +1,11 @@
-# flask_sqlalchemy/models.py
-from core import app
+
+# File that I was going to use when I was going to try to use an ORM
+
+"""
 from sqlalchemy import Column, String, Integer, ForeignKey
 from flask_sqlalchemy import SQLAlchemy
 import json
+
 
 db = SQLAlchemy(app)
 # not used anymore
@@ -106,5 +109,5 @@ if __name__ == '__main__':
     #db.session.add(data)
     db.session.commit()
 
-
+"""
 

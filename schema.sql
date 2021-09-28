@@ -3,7 +3,8 @@ drop table if exists genre;
 drop table if exists artist;
 drop table if exists album;
 drop table if exists song;
-drop table if exists userFavorites;
+drop table if exists user_favorites;
+drop table if exists billboard_list;
 
 
 
@@ -44,12 +45,19 @@ CREATE TABLE song (
   FOREIGN KEY(album_id) REFERENCES album(id)
 );
 
-CREATE TABLE userFavorites (
+CREATE TABLE user_favorites (
   user_id INTEGER not null ,
   song_id INTEGER not null,
   FOREIGN KEY(user_id) REFERENCES user(id),
   FOREIGN KEY(song_id) REFERENCES song(id),
   PRIMARY KEY(user_id, song_id)
+);
+
+CREATE TABLE billboard_list (
+  rank INTEGER not null,
+  song_id INTEGER not null,
+  FOREIGN KEY(song_id) REFERENCES song(id),
+  PRIMARY KEY(rank, song_id)
 );
 
 

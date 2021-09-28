@@ -29,3 +29,7 @@ def init_db():
         with open('schema.sql') as f:
             data = f.read()
             db.executescript(data)
+        
+        with open('seed.sql') as f:
+            seeds = f.read()
+            db.executescript(seeds)
