@@ -6,7 +6,10 @@
     See User_flow.png
 
  ## Routes
-    Please check the api_spec.yml for detailed route info. This is my first time writing in the openAPI spec but I used docs from https://swagger.io/docs/specification/describing-parameters/ and also used the VSCode plugin OpenAPI(Swagger) to help provide intellisense hints.   
+    Please check the api_spec.yml for detailed route info.  
+    This is my first time writing in the openAPI spec but I used docs from  
+    https://swagger.io/docs/specification/describing-parameters/ and also  
+    used the VSCode plugin OpenAPI(Swagger) to help provide intellisense hints.   
     It hopefully is pretty close to right.
 
 #### However, a few notes about the current layout  
