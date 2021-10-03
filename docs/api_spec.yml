@@ -1,0 +1,185 @@
+openapi: '3.0.2'
+info:
+  title: Billboard
+  version: '0.1'
+servers:
+  - url: https://localhost:5000
+paths:
+  /:
+    summary: A test route for ensuring connectivity to application
+    get:
+      responses:
+        '200':
+          description: OK
+  /users:
+    get:
+      summary: A test route to ensure database connection is alive
+      responses:
+        '200':
+          description: OK
+  /login:
+    post:
+      summary: A route to login a user. Front end supplies a username and password. API responsed with token.
+      requestBody:
+        content:
+          application/json:
+            example:
+              username: hwoods
+              password: 'testPassword'
+      responses:
+        '200': 
+          description: OK
+        '401':
+          description: Unathorized
+  /createUser:
+    post:
+        summary: A route to create a user. Password passed in plain text in the body, would likely need enhancement
+        requestBody:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  username:
+                    type: string
+                    description: The username of the user to create
+                  firstName:
+                    type: string
+                    description: The first name of the user
+                  lastName:
+                    type: string
+                    description: The lastName of the user
+                  password:
+                    type: string
+                    description: The password of the user
+              example:
+                username: hwoods
+                firstname: hayden
+                lastname: woods
+                password: 'testPassword'
+        responses:
+          '200': 
+            description: OK
+          '500':
+            description: Internal Server Error
+  /billboard:
+    get:
+      summary: A route to get all the songs in billboard list and their name, artist, album, genre and rank.
+      responses:
+        '200': 
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  properties:
+                    schema:
+                      type: object
+                      properties:
+                        rank:
+                          type: integer
+                          description: The rank of the song in the billboard list
+                        songName:
+                          type: string
+                          description: The name of the song
+                        songId:
+                          type: integer
+                          description: The id of the song
+                        artistName:
+                          type: string
+                          description: The name of the artist
+                        albumName:
+                          type: string
+                          description: The name of the album
+                        genre:
+                          type: string
+                          description: The name of the song genre
+  /favorites/{username}:
+      get:
+        summary: Get a users favorite songs
+        parameters:
+          - in: path
+            name: username
+            schema:
+              type: string
+            required: true
+            description: The username of the user to get favorites for
+        responses:
+          '200': 
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    properties:
+                      schema:
+                        type: object
+                        properties:
+                          rank: 
+                            type: integer
+                            description: The rank of the song in the billboard list
+                          songName:
+                            type: string
+                            description: The name of the song
+                          songId:
+                            type: integer
+                            description: The id of the song
+                          artistName:
+                            type: string
+                            description: The name of the artist
+                          albumName:
+                            type: string
+                            description: The name of the album
+                          genre:
+                            type: string
+                            description: The name of the song genre
+  /addFavorite:
+    post:
+        requestBody:
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  username: 
+                    type: string
+                    description: the username to add the favorite too
+                  songId: 
+                    type: integer
+                    description: The songId of the song to favorite
+              example:
+                username: hwoods
+                songId: 1234
+        responses:
+          '200': 
+            description: OK
+          '500':
+            description: Internal Server Error
+  /removeFavorite:
+    post:
+        requestBody:
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  username: 
+                    type: string
+                    description: the username to remove the favorite from
+                  songId: 
+                    type: integer
+                    description: The songId of the song to remove as a favorite
+              example:
+                username: hwoods
+                songId: 1234
+        responses:
+          '200': 
+            description: OK
+          '500':
+            description: Internal Server Error
+                      
+
+                  
+        
