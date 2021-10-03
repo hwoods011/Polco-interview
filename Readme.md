@@ -24,14 +24,16 @@
  > docker run -p 5000:5000 -t billboard
 
  You should then be able to navigate to 
- > http:// localhost:5000/
- > http:// localhost:5000/users
- > http:// localhost:5000/favorites/hwoods
+ > http:// localhost:5000/  
+ > http:// localhost:5000/users  
+ > http:// localhost:5000/favorites/hwoods  
 
 ## Without Docker
 1. If not using docker: Install Python and setup to be on system path.
-2. Inside cloned folder run 
-   > pip install -r requirements.txt
+  - A good command to use to check if it's configured correctly
+> python -v
+3. Inside cloned folder run 
+   > pip install -r requirements.txt  
 
 ## VSCode
   1. Open the folder you cloned inside VScode. (Likely is Polco-interview). Do not open the subfolder.
@@ -39,16 +41,16 @@
   2. Go to the Run and Debug on the right hand side
   3. Click play button at the top of the panel.
   4. The flask app should start and you can then navigate to:
- > http:// localhost:5000/
- > http:// localhost:5000/users
- > http:// localhost:5000/favorites/hwoods
+ > http:// localhost:5000/  
+ > http:// localhost:5000/users  
+ > http:// localhost:5000/favorites/hwoods  
 
 ## Terminal
  1. In your cloned folder run the following commands.
     - First set the following environment variables
    
-   > FLASK_APP=songs.webapp
-   > FLASK_ENV=development
+   > FLASK_APP=songs.webapp  
+   > FLASK_ENV=development  
 
  Now start the app
-   > python -m flask run
+   > python -m flask run  
